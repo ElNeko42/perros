@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-12 mb-2">
             <!-- llamamos al componente para Crear   -->
-            <router-link :to='{name:"crearBlog"}' class="btn btn-success"><i class="fas fa-plus-circle"></i></router-link>
+            <router-link :to='{name:"crearPerro"}' class="btn btn-success"><i class="fas fa-plus-circle"></i></router-link>
         </div>
         <div class="col-12">             
                     <div class="table-responsive">
@@ -16,14 +16,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr v-for="blog in blogs" :key="blog.id">
+                                <tr v-for="blog in dogs" :key="blog.id">
                                     <td>{{ blog.id }}</td>
                                     <td>{{ blog.titulo }}</td>
                                     <td>{{ blog.contenido }}</td>
                                     <td>
                                         <!-- llamamos al componente para Editar     -->
                                         <router-link :to='{name:"editarBlog",params:{id:blog.id}}' class="btn btn-info"><i class="fas fa-edit"></i></router-link>
-                                        <a type="button" @click="borrarBlog(blog.id)" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                                        <a type="button" @click="borrarDogs(blog.id)" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                                     </td>
                                 </tr>
                             </tbody>
@@ -36,28 +36,28 @@
 
 <script>
 export default {
-    name:"blogs",
+    name:"dogs",
     data(){
         return {
-            blogs:[]
+            dogs:[]
         }
     },
     mounted(){
-        this.mostrarBlogs()
+        this.mostrarDogs()
     },
     methods:{
-        async mostrarBlogs(){
+        async mostrarDogs(){
             await this.axios.get('/api/blog').then(response=>{
-                this.blogs = response.data
+                this.dogs = response.data
             }).catch(error=>{
                 console.log(error)
-                this.blogs = []
+                this.dogs = []
             })
         },
-        borrarBlog(id){
+        borrarDogs(id){
             if(confirm("¿Confirma eliminar el registro?")){
                 this.axios.delete(`/api/blog/${id}`).then(response=>{
-                    this.mostrarBlogs()
+                    this.mostrarDogs()
                 }).catch(error=>{
                     console.log(error)
                 })

@@ -8,4 +8,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::resource('blog',App\Http\Controllers\PerroController::class);
+Route::resource('blog',App\Http\Controllers\DogController::class);

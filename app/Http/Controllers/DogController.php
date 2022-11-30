@@ -7,14 +7,15 @@ use Illuminate\Http\Request;
 
 class DogController extends Controller
 {
-    /**
+   /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        $Dogs = Dog::all(['id','titulo','contenido']);
+        return response()->json($Dogs);
     }
 
     /**
@@ -35,27 +36,30 @@ class DogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $Dog = Dog::create($request->post());
+        return response()->json([           
+            'Dog'=>$Dog
+        ]);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Dog  $dog
+     * @param  \App\Models\Dog  $Dog
      * @return \Illuminate\Http\Response
      */
-    public function show(Dog $dog)
+    public function show(Dog $Dog)
     {
-        //
+        return response()->json($Dog);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Dog  $dog
+     * @param  \App\Models\Dog  $Dog
      * @return \Illuminate\Http\Response
      */
-    public function edit(Dog $dog)
+    public function edit(Dog $Dog)
     {
         //
     }
@@ -64,22 +68,28 @@ class DogController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Dog  $dog
+     * @param  \App\Models\Dog  $Dog
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Dog $dog)
+    public function update(Request $request, Dog $Dog)
     {
-        //
+        $Dog->fill($request->post())->save();
+        return response()->json([            
+            'Dog'=>$Dog
+        ]);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Dog  $dog
+     * @param  \App\Models\Dog  $Dog
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Dog $dog)
+    public function destroy(Dog $Dog)
     {
-        //
+        $Dog->delete();
+        return response()->json([
+            'mensaje'=>'¡Registro eliminado correctamente!'
+        ]);
     }
 }

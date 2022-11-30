@@ -2078,12 +2078,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
@@ -2176,23 +2170,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 var Home = function Home() {
   return __webpack_require__.e(/*! import() */ "resources_js_components_Home_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/Home.vue */ "./resources/js/components/Home.vue"));
-};
-
-var Contacto = function Contacto() {
-  return __webpack_require__.e(/*! import() */ "resources_js_components_Contacto_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/Contacto.vue */ "./resources/js/components/Contacto.vue"));
-}; //importamos los componentes para el blog
+}; //importamos los componentes para el perros
 
 
 var Mostrar = function Mostrar() {
-  return __webpack_require__.e(/*! import() */ "resources_js_components_blog_Mostrar_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/blog/Mostrar.vue */ "./resources/js/components/blog/Mostrar.vue"));
+  return __webpack_require__.e(/*! import() */ "resources_js_components_perros_Mostrar_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/perros/Mostrar.vue */ "./resources/js/components/perros/Mostrar.vue"));
 };
 
 var Crear = function Crear() {
-  return __webpack_require__.e(/*! import() */ "resources_js_components_blog_Crear_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/blog/Crear.vue */ "./resources/js/components/blog/Crear.vue"));
+  return __webpack_require__.e(/*! import() */ "resources_js_components_perros_Crear_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/perros/Crear.vue */ "./resources/js/components/perros/Crear.vue"));
 };
 
 var Editar = function Editar() {
-  return __webpack_require__.e(/*! import() */ "resources_js_components_blog_Editar_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/blog/Editar.vue */ "./resources/js/components/blog/Editar.vue"));
+  return __webpack_require__.e(/*! import() */ "resources_js_components_perros_Editar_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/perros/Editar.vue */ "./resources/js/components/perros/Editar.vue"));
 };
 
 var routes = [{
@@ -2200,21 +2190,17 @@ var routes = [{
   path: '/',
   component: Home
 }, {
-  name: 'mostrarBlogs',
-  path: '/blogs',
+  name: 'mostrarPerros',
+  path: '/perros',
   component: Mostrar
 }, {
-  name: 'crearBlog',
+  name: 'crearPerro',
   path: '/crear',
   component: Crear
 }, {
-  name: 'editarBlog',
+  name: 'editarPerro',
   path: '/editar/:id',
   component: Editar
-}, {
-  name: 'contacto',
-  path: '/contacto',
-  component: Contacto
 }];
 
 /***/ }),
@@ -19744,10 +19730,6 @@ var render = function() {
       { staticClass: "navbar navbar-expand-lg navbar-dark bg-primary" },
       [
         _c("div", { staticClass: "container-fluid" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _vm._m(1),
-          _vm._v(" "),
           _c(
             "div",
             {
@@ -19784,7 +19766,7 @@ var render = function() {
                       "router-link",
                       {
                         staticClass: "nav-link",
-                        attrs: { "exact-active-class": "active", to: "/blogs" }
+                        attrs: { "exact-active-class": "active", to: "/perros" }
                       },
                       [_vm._v("perros")]
                     )
@@ -19793,7 +19775,7 @@ var render = function() {
                 )
               ]),
               _vm._v(" "),
-              _vm._m(2)
+              _vm._m(0)
             ]
           )
         ])
@@ -19804,41 +19786,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
-      _c("img", {
-        attrs: {
-          src: "https://vuejs.org/images/logo.svg",
-          alt: "",
-          width: "30",
-          height: "24"
-        }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      {
-        staticClass: "navbar-toggler",
-        attrs: {
-          type: "button",
-          "data-bs-toggle": "collapse",
-          "data-bs-target": "#navbarSupportedContent",
-          "aria-controls": "navbarSupportedContent",
-          "aria-expanded": "false",
-          "aria-label": "Toggle navigation"
-        }
-      },
-      [_c("span", { staticClass: "navbar-toggler-icon" })]
-    )
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -35297,7 +35244,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.3","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_components_Home_vue":1,"resources_js_components_Contacto_vue":1,"resources_js_components_blog_Mostrar_vue":1,"resources_js_components_blog_Crear_vue":1,"resources_js_components_blog_Editar_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_Home_vue":1,"resources_js_components_perros_Mostrar_vue":1,"resources_js_components_perros_Crear_vue":1,"resources_js_components_perros_Editar_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

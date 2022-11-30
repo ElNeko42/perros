@@ -1,9 +1,8 @@
 const Home = () => import('./components/Home.vue')
-const Contacto = () => import('./components/Contacto.vue')
-//importamos los componentes para el blog
-const Mostrar = () => import('./components/blog/Mostrar.vue')
-const Crear = () => import('./components/blog/Crear.vue')
-const Editar = () => import('./components/blog/Editar.vue')
+//importamos los componentes para el perros
+const Mostrar = () => import('./components/perros/Mostrar.vue')
+const Crear = () => import('./components/perros/Crear.vue')
+const Editar = () => import('./components/perros/Editar.vue')
 
 export const routes = [
     {
@@ -12,23 +11,19 @@ export const routes = [
         component: Home
     },
     {
-        name: 'mostrarBlogs',
-        path: '/blogs',
+        name: 'mostrarPerros',
+        path: '/perros',
         component: Mostrar
     },
     {
-        name: 'crearBlog',
+        name: 'crearPerro',
         path: '/crear',
         component: Crear
     },
     {
-        name: 'editarBlog',
+        name: 'editarPerro',
         path: '/editar/:id',
         component: Editar
     },
-     {
-        name: 'contacto',
-        path: '/contacto',
-        component: Contacto
-    }
+    
 ]

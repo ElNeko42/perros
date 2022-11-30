@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-12">
             <div class="card">
-                <div class="card-header"><h4>Crear Blog</h4></div>
+                <div class="card-header"><h4>Crear Perro</h4></div>
                 <div class="card-body">
                     <form @submit.prevent="crear">
                         <div class="row">
@@ -43,7 +43,7 @@ export default {
     methods:{
         async crear(){
             await this.axios.post('/api/blog',this.blog).then(response=>{
-                this.$router.push({name:"mostrarBlogs"})
+                this.$router.push({name:"mostrarDogs"})
             }).catch(error=>{
                 console.log(error)
             })
