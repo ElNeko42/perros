@@ -135,7 +135,7 @@ export default {
         obtenerImagen(e) {
             let file = e.target.files[0];
             console.log(file)
-            this.dog.imagen = "images"+file.name
+            this.dog.imagen = "images/"+file.name
             this.dog.imagenFile = file
             this.cargarImagen(file);
         },

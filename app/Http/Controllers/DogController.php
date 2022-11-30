@@ -41,6 +41,7 @@ class DogController extends Controller
             $imagen = $request->file('imagenFile');
             $filename=$request->imagenFile->getClientOriginalName();
             $ruta =public_path("../resources/js/components/perros/images/");
+            $ruta =public_path("../public/images/");
             $imagen->move($ruta,$filename);
             
             info(message:$filename);

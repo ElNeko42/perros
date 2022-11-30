@@ -24,7 +24,7 @@
                     <tbody>
                         <tr v-for="dog in dogs" :key="dog.id">
                             <td>{{ dog.id }}</td>
-                            <td><img :src="dog.imagen" class="img-responsive" height="70" width="90"></td>
+                            <td><img :src="dog.imagen" class="img-responsive" height="70" width="90" :alt="dog.imagen"></td>
                             <td>{{ dog.raza }}</td>
                             <td>{{ dog.tamaño }}</td>
                             <td>{{ dog.color }}</td>

@@ -4981,7 +4981,12 @@ var render = function() {
                 _c("td", [
                   _c("img", {
                     staticClass: "img-responsive",
-                    attrs: { src: dog.imagen, height: "70", width: "90" }
+                    attrs: {
+                      src: dog.imagen,
+                      height: "70",
+                      width: "90",
+                      alt: dog.imagen
+                    }
                   })
                 ]),
                 _vm._v(" "),
