@@ -19,7 +19,7 @@
                                     <label>imagen</label>
                                     <input type="file" class="form-control" @change="obtenerImagen">
                                     <figure>
-                                        <img width="200" height="200" :src="imagen" alt="foto perro">
+                                        <img width="200" height="200" :src="imagen" alt="foto perro" >
                                     </figure>
                                 </div>
 
@@ -101,6 +101,7 @@ export default {
                 color: "",
                 origen: "",
                 imagen: "",
+                imagenFile: "",
             }
         }
     },
@@ -118,21 +119,12 @@ export default {
                 this.dog.origen = origen
                 this.dog.imagen = imagen
                 this.dog.observaciones = observaciones
+                this.imagenMiniatura=imagen
             }).catch(error => {
                 console.log(error)
             })
         },
-        async actualizar() {
-            let formdata = new FormData();
-
-            formdata.append('raza', this.dog.raza)
-            formdata.append('observaciones', this.dog.observaciones)
-            formdata.append('imagen', this.dog.imagen)
-            formdata.append('imagenFile', this.dog.imagenFile)
-            formdata.append('tamaño', this.dog.tamaño)
-            formdata.append('pelo', this.dog.pelo)
-            formdata.append('color', this.dog.color)
-            formdata.append('origen', this.dog.origen)
+        async actualizar() {  
             Swal.fire({
                 icon: 'success',
                 title: 'guardado',
@@ -148,7 +140,7 @@ export default {
         obtenerImagen(e) {
             let file = e.target.files[0];
             console.log(file)
-            this.dog.imagen = "images" + file.name
+            this.dog.imagen = "images/" + file.name
             this.dog.imagenFile = file
             this.cargarImagen(file);
         },

@@ -82,7 +82,15 @@ class DogController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Dog $Dog)
-    {
+    {   
+        if($request->hasFile('imagenFile')){
+            $imagen = $request->file('imagenFile');
+            $filename=$request->imagenFile->getClientOriginalName();
+            $ruta =public_path("../public/images/");
+            $imagen->move($ruta,$filename);
+            
+            info(message:$filename);
+        }
         $Dog->fill($request->post())->save();
         return response()->json([            
             'Dog'=>$Dog

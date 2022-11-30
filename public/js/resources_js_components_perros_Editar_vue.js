@@ -133,7 +133,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         pelo: "",
         color: "",
         origen: "",
-        imagen: ""
+        imagen: "",
+        imagenFile: ""
       }
     };
   },
@@ -166,6 +167,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   _this.dog.origen = origen;
                   _this.dog.imagen = imagen;
                   _this.dog.observaciones = observaciones;
+                  _this.imagenMiniatura = imagen;
                 })["catch"](function (error) {
                   console.log(error);
                 });
@@ -182,26 +184,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var _this2 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
-        var formdata;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                formdata = new FormData();
-                formdata.append('raza', _this2.dog.raza);
-                formdata.append('observaciones', _this2.dog.observaciones);
-                formdata.append('imagen', _this2.dog.imagen);
-                formdata.append('imagenFile', _this2.dog.imagenFile);
-                formdata.append('tamaño', _this2.dog.tamaño);
-                formdata.append('pelo', _this2.dog.pelo);
-                formdata.append('color', _this2.dog.color);
-                formdata.append('origen', _this2.dog.origen);
                 sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                   icon: 'success',
                   title: 'guardado',
                   text: 'Perrito guardado correctamente'
                 });
-                _context2.next = 12;
+                _context2.next = 3;
                 return _this2.axios.put("/api/Dog/".concat(_this2.$route.params.id), _this2.dog).then(function (response) {
                   _this2.$router.push({
                     name: "mostrarPerros"
@@ -210,7 +202,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   console.log(error);
                 });
 
-              case 12:
+              case 3:
               case "end":
                 return _context2.stop();
             }
@@ -221,7 +213,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     obtenerImagen: function obtenerImagen(e) {
       var file = e.target.files[0];
       console.log(file);
-      this.dog.imagen = "images" + file.name;
+      this.dog.imagen = "images/" + file.name;
       this.dog.imagenFile = file;
       this.cargarImagen(file);
     },
