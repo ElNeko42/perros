@@ -36,7 +36,7 @@ class DogController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   sleep(seconds:3);
+    {   
         if($request->hasFile('imagenFile')){
             $imagen = $request->file('imagenFile');
             $filename=$request->imagenFile->getClientOriginalName();

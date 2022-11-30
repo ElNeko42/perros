@@ -68,22 +68,24 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "container mt-4" }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col text-center" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("img", { attrs: { src: "../dog-png-5295254_960_720.png" } })
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container mt-4" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col text-center" }, [
-          _c("h1", [
-            _vm._v("Componente "),
-            _c("span", { staticClass: "badge bg-secondary" }, [_vm._v("HOME")])
-          ])
-        ])
-      ])
+    return _c("h1", [
+      _vm._v("Aplicacíon de reguistro de "),
+      _c("span", { staticClass: "badge bg-secondary" }, [_vm._v("perros")])
     ])
   }
 ]

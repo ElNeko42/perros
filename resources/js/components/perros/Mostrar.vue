@@ -48,6 +48,8 @@
 </template>
 
 <script>
+import Swal from 'sweetalert2'
+
 export default {
     name: "dogs",
     data() {
@@ -68,13 +70,18 @@ export default {
             })
         },
         borrarDogs(id) {
-            if (confirm("¿Confirma eliminar el registro?")) {
+            Swal.fire({
+                icon: 'success',
+                title: 'guardado',
+                text: 'Perrito borrado correctamente',
+
+            })
                 this.axios.delete(`/api/Dog/${id}`).then(response => {
                     this.mostrarDogs()
                 }).catch(error => {
                     console.log(error)
                 })
-            }
+            
         }
     }
 }
