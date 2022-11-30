@@ -76,6 +76,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "dogs",
   data: function data() {
@@ -1007,7 +1010,12 @@ var render = function() {
               return _c("tr", { key: dog.id }, [
                 _c("td", [_vm._v(_vm._s(dog.id))]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(dog.foto))]),
+                _c("td", [
+                  _c("img", {
+                    staticClass: "img-responsive",
+                    attrs: { src: dog.imagen, height: "70", width: "90" }
+                  })
+                ]),
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(dog.raza))]),
                 _vm._v(" "),
