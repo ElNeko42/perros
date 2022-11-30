@@ -63,20 +63,20 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "editar-blog",
+  name: "editar-perro",
   data: function data() {
     return {
-      blog: {
+      Dog: {
         titulo: "",
         contenido: ""
       }
     };
   },
   mounted: function mounted() {
-    this.mostrarBlog();
+    this.mostrarDog();
   },
   methods: {
-    mostrarBlog: function mostrarBlog() {
+    mostrarDog: function mostrarDog() {
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
@@ -85,12 +85,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return _this.axios.get("/api/blog/".concat(_this.$route.params.id)).then(function (response) {
+                return _this.axios.get("/api/Dog/".concat(_this.$route.params.id)).then(function (response) {
                   var _response$data = response.data,
                       titulo = _response$data.titulo,
                       contenido = _response$data.contenido;
-                  _this.blog.titulo = titulo;
-                  _this.blog.contenido = contenido;
+                  _this.Dog.titulo = titulo;
+                  _this.Dog.contenido = contenido;
                 })["catch"](function (error) {
                   console.log(error);
                 });
@@ -112,9 +112,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return _this2.axios.put("/api/blog/".concat(_this2.$route.params.id), _this2.blog).then(function (response) {
+                return _this2.axios.put("/api/Dog/".concat(_this2.$route.params.id), _this2.Dog).then(function (response) {
                   _this2.$router.push({
-                    name: "mostrarBlogs"
+                    name: "mostrarPerros"
                   });
                 })["catch"](function (error) {
                   console.log(error);
@@ -1012,19 +1012,19 @@ var render = function() {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.blog.titulo,
-                          expression: "blog.titulo"
+                          value: _vm.Dog.titulo,
+                          expression: "Dog.titulo"
                         }
                       ],
                       staticClass: "form-control",
                       attrs: { type: "text" },
-                      domProps: { value: _vm.blog.titulo },
+                      domProps: { value: _vm.Dog.titulo },
                       on: {
                         input: function($event) {
                           if ($event.target.composing) {
                             return
                           }
-                          _vm.$set(_vm.blog, "titulo", $event.target.value)
+                          _vm.$set(_vm.Dog, "titulo", $event.target.value)
                         }
                       }
                     })
@@ -1038,20 +1038,20 @@ var render = function() {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.blog.contenido,
-                          expression: "blog.contenido"
+                          value: _vm.Dog.contenido,
+                          expression: "Dog.contenido"
                         }
                       ],
                       staticClass: "form-control",
                       staticStyle: { height: "100px" },
                       attrs: { id: "floatingTextarea2" },
-                      domProps: { value: _vm.blog.contenido },
+                      domProps: { value: _vm.Dog.contenido },
                       on: {
                         input: function($event) {
                           if ($event.target.composing) {
                             return
                           }
-                          _vm.$set(_vm.blog, "contenido", $event.target.value)
+                          _vm.$set(_vm.Dog, "contenido", $event.target.value)
                         }
                       }
                     }),
@@ -1077,7 +1077,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
-      _c("h4", [_vm._v("Editar Blog")])
+      _c("h4", [_vm._v("Editar Perro")])
     ])
   },
   function() {

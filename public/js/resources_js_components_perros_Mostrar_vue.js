@@ -66,6 +66,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "dogs",
   data: function data() {
@@ -993,13 +1003,21 @@ var render = function() {
           _vm._v(" "),
           _c(
             "tbody",
-            _vm._l(_vm.dogs, function(blog) {
-              return _c("tr", { key: blog.id }, [
-                _c("td", [_vm._v(_vm._s(blog.id))]),
+            _vm._l(_vm.dogs, function(dog) {
+              return _c("tr", { key: dog.id }, [
+                _c("td", [_vm._v(_vm._s(dog.id))]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(blog.titulo))]),
+                _c("td", [_vm._v(_vm._s(dog.foto))]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(blog.contenido))]),
+                _c("td", [_vm._v(_vm._s(dog.raza))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(dog.tamaño))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(dog.color))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(dog.pelo))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(dog.origen))]),
                 _vm._v(" "),
                 _c(
                   "td",
@@ -1009,7 +1027,7 @@ var render = function() {
                       {
                         staticClass: "btn btn-info",
                         attrs: {
-                          to: { name: "editarBlog", params: { id: blog.id } }
+                          to: { name: "editarPerro", params: { id: dog.id } }
                         }
                       },
                       [_c("i", { staticClass: "fas fa-edit" })]
@@ -1022,7 +1040,7 @@ var render = function() {
                         attrs: { type: "button" },
                         on: {
                           click: function($event) {
-                            return _vm.borrarDogs(blog.id)
+                            return _vm.borrarDogs(dog.id)
                           }
                         }
                       },
@@ -1049,9 +1067,17 @@ var staticRenderFns = [
       _c("tr", [
         _c("th", [_vm._v("ID")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Título")]),
+        _c("th", [_vm._v("Foto")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Contenido")]),
+        _c("th", [_vm._v("Raza")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Tamaño")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Color de pelo")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("pelo")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("origen")]),
         _vm._v(" "),
         _c("th", [_vm._v("Acciones")])
       ])

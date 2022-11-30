@@ -13,8 +13,8 @@ class DogController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $Dogs = Dog::all(['id','titulo','contenido']);
+    {   
+        $Dogs = Dog::all(['id','raza','imagen','tamaño','pelo','color','origen','observaciones']);
         return response()->json($Dogs);
     }
 
@@ -35,7 +35,11 @@ class DogController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {  
+        if($request->hasFile('imagen')){
+            $filename=$request->imagen->getClientOriginalName();
+            info(message:$filename);
+        }
         $Dog = Dog::create($request->post());
         return response()->json([           
             'Dog'=>$Dog

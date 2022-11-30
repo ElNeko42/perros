@@ -14,7 +14,7 @@ class PerroController extends Controller
      */
     public function index()
     {
-        $Perros = Perro::all(['id','titulo','contenido']);
+        $Perros = Perro::all(['id','raza','imagen','tamaño','pelo','color','origen','observaciones']);
         return response()->json($Perros);
     }
 

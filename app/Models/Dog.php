@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Dog extends Model
 {
     use HasFactory;
-    protected $fillable = ['titulo', 'contenido'];
+    protected $fillable = ['raza','imagen','tamaño','pelo','color','origen','observaciones'];
 }

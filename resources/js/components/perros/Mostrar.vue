@@ -10,20 +10,30 @@
                             <thead class="bg-primary text-white">
                                 <tr>
                                     <th>ID</th>
-                                    <th>Título</th>
-                                    <th>Contenido</th>
+                                    <th>Foto</th>
+                                    <th>Raza</th>
+                                    <th>Tamaño</th>
+                                    <th>Color de pelo</th>
+                                    <th>pelo</th>
+                                    <th>origen</th>
+                            
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr v-for="blog in dogs" :key="blog.id">
-                                    <td>{{ blog.id }}</td>
-                                    <td>{{ blog.titulo }}</td>
-                                    <td>{{ blog.contenido }}</td>
+                                <tr v-for="dog in dogs" :key="dog.id">
+                                    <td>{{ dog.id }}</td>
+                                    <td>{{ dog.foto }}</td>
+                                    <td>{{ dog.raza }}</td>
+                                    <td>{{ dog.tamaño }}</td>
+                                    <td>{{ dog.color }}</td>
+                                    <td>{{ dog.pelo }}</td>
+                                    <td>{{ dog.origen }}</td>
+                                   
                                     <td>
                                         <!-- llamamos al componente para Editar     -->
-                                        <router-link :to='{name:"editarBlog",params:{id:blog.id}}' class="btn btn-info"><i class="fas fa-edit"></i></router-link>
-                                        <a type="button" @click="borrarDogs(blog.id)" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                                        <router-link :to='{name:"editarPerro",params:{id:dog.id}}' class="btn btn-info"><i class="fas fa-edit"></i></router-link>
+                                        <a type="button" @click="borrarDogs(dog.id)" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                                     </td>
                                 </tr>
                             </tbody>
