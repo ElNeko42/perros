@@ -47,7 +47,7 @@ export default {
     },
     methods:{
         async mostrarDogs(){
-            await this.axios.get('/api/blog').then(response=>{
+            await this.axios.get('/api/Dog').then(response=>{
                 this.dogs = response.data
             }).catch(error=>{
                 console.log(error)
@@ -56,7 +56,7 @@ export default {
         },
         borrarDogs(id){
             if(confirm("¿Confirma eliminar el registro?")){
-                this.axios.delete(`/api/blog/${id}`).then(response=>{
+                this.axios.delete(`/api/Dog/${id}`).then(response=>{
                     this.mostrarDogs()
                 }).catch(error=>{
                     console.log(error)

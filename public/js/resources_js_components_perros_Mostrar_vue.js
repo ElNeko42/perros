@@ -86,7 +86,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return _this.axios.get('/api/blog').then(function (response) {
+                return _this.axios.get('/api/Dog').then(function (response) {
                   _this.dogs = response.data;
                 })["catch"](function (error) {
                   console.log(error);
@@ -105,7 +105,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var _this2 = this;
 
       if (confirm("¿Confirma eliminar el registro?")) {
-        this.axios["delete"]("/api/blog/".concat(id)).then(function (response) {
+        this.axios["delete"]("/api/Dog/".concat(id)).then(function (response) {
           _this2.mostrarDogs();
         })["catch"](function (error) {
           console.log(error);

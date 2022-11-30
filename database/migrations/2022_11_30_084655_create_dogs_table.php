@@ -15,6 +15,8 @@ class CreateDogsTable extends Migration
     {
         Schema::create('dogs', function (Blueprint $table) {
             $table->id();
+            $table->string('titulo');
+            $table->text('contenido');
             $table->timestamps();
         });
     }

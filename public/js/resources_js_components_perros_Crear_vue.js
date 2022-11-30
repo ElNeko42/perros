@@ -62,10 +62,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "crear-blog",
+  name: "crear-perro",
   data: function data() {
     return {
-      blog: {
+      dog: {
         titulo: "",
         contenido: ""
       }
@@ -81,9 +81,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return _this.axios.post('/api/blog', _this.blog).then(function (response) {
+                return _this.axios.post('/api/Dog', _this.dog).then(function (response) {
                   _this.$router.push({
-                    name: "mostrarDogs"
+                    name: "mostrarPerros"
                   });
                 })["catch"](function (error) {
                   console.log(error);
@@ -981,19 +981,19 @@ var render = function() {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.blog.titulo,
-                          expression: "blog.titulo"
+                          value: _vm.dog.titulo,
+                          expression: "dog.titulo"
                         }
                       ],
                       staticClass: "form-control",
                       attrs: { type: "text" },
-                      domProps: { value: _vm.blog.titulo },
+                      domProps: { value: _vm.dog.titulo },
                       on: {
                         input: function($event) {
                           if ($event.target.composing) {
                             return
                           }
-                          _vm.$set(_vm.blog, "titulo", $event.target.value)
+                          _vm.$set(_vm.dog, "titulo", $event.target.value)
                         }
                       }
                     })
@@ -1007,20 +1007,20 @@ var render = function() {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.blog.contenido,
-                          expression: "blog.contenido"
+                          value: _vm.dog.contenido,
+                          expression: "dog.contenido"
                         }
                       ],
                       staticClass: "form-control",
                       staticStyle: { height: "100px" },
                       attrs: { id: "floatingTextarea2" },
-                      domProps: { value: _vm.blog.contenido },
+                      domProps: { value: _vm.dog.contenido },
                       on: {
                         input: function($event) {
                           if ($event.target.composing) {
                             return
                           }
-                          _vm.$set(_vm.blog, "contenido", $event.target.value)
+                          _vm.$set(_vm.dog, "contenido", $event.target.value)
                         }
                       }
                     }),

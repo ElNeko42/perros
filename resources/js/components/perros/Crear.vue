@@ -9,12 +9,12 @@
                             <div class="col-12 mb-2">
                                 <div class="form-group">
                                     <label>Título</label>
-                                    <input type="text" class="form-control" v-model="blog.titulo">
+                                    <input type="text" class="form-control" v-model="dog.titulo">
                                 </div>
                             </div>
                             <div class="col-12 mb-2">
                                 <div class="form-floating">
-                                    <textarea class="form-control" id="floatingTextarea2" v-model="blog.contenido" style="height: 100px"></textarea>
+                                    <textarea class="form-control" id="floatingTextarea2" v-model="dog.contenido" style="height: 100px"></textarea>
                                     <label for="floatingTextarea2">Contenido</label>
                                 </div>
                             </div>
@@ -31,10 +31,10 @@
 
 <script>
 export default {
-    name:"crear-blog",
+    name:"crear-perro",
     data(){
         return {
-            blog:{
+            dog:{
                 titulo:"",
                 contenido:""
             }
@@ -42,8 +42,8 @@ export default {
     },
     methods:{
         async crear(){
-            await this.axios.post('/api/blog',this.blog).then(response=>{
-                this.$router.push({name:"mostrarDogs"})
+            await this.axios.post('/api/Dog',this.dog).then(response=>{
+                this.$router.push({name:"mostrarPerros"})
             }).catch(error=>{
                 console.log(error)
             })
