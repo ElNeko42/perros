@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Dog;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class DogController extends Controller
 {
@@ -35,9 +36,13 @@ class DogController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {  
-        if($request->hasFile('imagen')){
-            $filename=$request->imagen->getClientOriginalName();
+    {   sleep(seconds:3);
+        if($request->hasFile('imagenFile')){
+            $imagen = $request->file('imagenFile');
+            $filename=$request->imagenFile->getClientOriginalName();
+            $ruta =public_path("../resources/js/components/perros/images/");
+            $imagen->move($ruta,$filename);
+            
             info(message:$filename);
         }
         $Dog = Dog::create($request->post());

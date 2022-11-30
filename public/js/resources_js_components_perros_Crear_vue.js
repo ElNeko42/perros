@@ -148,10 +148,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 formdata = new FormData();
-                _this.dog.imagen = "aaaa.com";
                 formdata.append('raza', _this.dog.raza);
                 formdata.append('observaciones', _this.dog.observaciones);
                 formdata.append('imagen', _this.dog.imagen);
+                formdata.append('imagenFile', _this.dog.imagenFile);
                 formdata.append('tamaño', _this.dog.tamaño);
                 formdata.append('pelo', _this.dog.pelo);
                 formdata.append('color', _this.dog.color);
@@ -183,8 +183,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     obtenerImagen: function obtenerImagen(e) {
       var file = e.target.files[0];
-      console.log(file); //this.dog.imagen = file
-
+      console.log(file);
+      this.dog.imagen = "images" + file.name;
+      this.dog.imagenFile = file;
       this.cargarImagen(file);
     },
     cargarImagen: function cargarImagen(file) {

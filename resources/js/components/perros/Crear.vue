@@ -107,10 +107,11 @@ export default {
     methods: {
         async crear() {
             let formdata = new FormData();
-            this.dog.imagen="aaaa.com"
+           
             formdata.append('raza', this.dog.raza)
             formdata.append('observaciones', this.dog.observaciones)
             formdata.append('imagen', this.dog.imagen)
+            formdata.append('imagenFile', this.dog.imagenFile)
             formdata.append('tamaño', this.dog.tamaño)
             formdata.append('pelo', this.dog.pelo)
             formdata.append('color', this.dog.color)
@@ -134,7 +135,8 @@ export default {
         obtenerImagen(e) {
             let file = e.target.files[0];
             console.log(file)
-            //this.dog.imagen = file
+            this.dog.imagen = "images"+file.name
+            this.dog.imagenFile = file
             this.cargarImagen(file);
         },
         cargarImagen(file) {
